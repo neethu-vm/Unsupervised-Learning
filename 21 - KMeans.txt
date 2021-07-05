@@ -1,0 +1,62 @@
+
+
+
+
+
+
+Unsupervised Learning
+	in Unsupervised Learning there wont be any labels(target) available for training.
+	It try to identify some intrinsic patterns from the data.
+Eg: Clustering(KMeans),Dimensionality Reduction(Principal Component Analysis)
+
+Clustering - Cluster analysis or clustering is the task of grouping a set of objects in such a way that 
+objects in the same group are more similar to each other than to those in other groups.
+
+Group - A set of similar objects - A group has homogeneous nature. Between the groups objects are heterogeneous.
+
+How clustering works in terms of ML :
+Clustering is based on Euclidean Distance
+	ED([x1y1],[x2y2]) = [x1-x2]^2 + [y1-y2]^2
+
+Algorithms Used 
+1.K-Means Algorithm
+2.Hierarchical Clustering  (agglomerative clustering) - 1% use case
+3.DBSCAN
+
+in 90 - 95% of the cases, we will be using K-Means algorithm.
+
+Hierarchical Clustering - sequential operation
+	- Top to bottom
+	- bottom to top
+K-Means Clustering - parallel operation
+
+K - #clusters - we have a technique to identify the best value for K - Elbow Method.
+
+S1 - Identify the value for K using elbow method- not part of modelling
+S2 - Randomly assign K centroids in the data.
+S3 - Calculate Euclidean Distance for each data points from each centroids.
+S4 - Assign the data-points to the cluster with Minimum Euclidean Distance 
+	Intra cluster distance should be as minimum as possible and inter cluster distance should be as max as possible
+S5 - Recalculate the centroid for each clusters 
+S6 - Repeat S3,S4 and S5 until saturation
+S7 - list the clusters for each data-points
+
+https://towardsdatascience.com/unsupervised-learning-and-data-clustering-eeecb78b422a
+
+
+
+Elbow Method
+
+Elbow method used to identify the best value for K
+It uses K-Means algorithm itself to calculate the best value of K
+
+Elbow graph is a plot, WCSS vs #clusters where WCSS - Within the Cluster sum of Square  = [ SUM of SQUARE(centroid - datapoint) ] 
+
+if K =1 , WCSS will be Max
+WCSS will reduce by increasing #K
+if K = n , WCSS = 0
+this graph will look like a human arm.
+And the value at the elbow point is considered as the best value for K
+
+
+
